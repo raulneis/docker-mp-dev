@@ -4,6 +4,7 @@ MAINTAINER @raulneis <raulneis@gmail.com>
 ADD .docker/composer.phar /usr/local/bin/composer
 ADD .docker/xampp-linux-x64-1.8.2-6-installer.run /tmp/
 
+RUN usermod -u 1000 www-data
 RUN chmod +x /tmp/xampp-linux-x64-1.8.2-6-installer.run
 RUN /tmp/xampp-linux-x64-1.8.2-6-installer.run --mode unattended
 

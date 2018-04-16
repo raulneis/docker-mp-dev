@@ -5,9 +5,8 @@ services:
     build:
       context: .
       dockerfile: .docker/Dockerfile
-    image: docker-server-mp
+    image: ${IMAGE_NAME}
     ports:
-      - 8090:80
+      - ${PORT}:80
     volumes:
-      - ./src:/var/www/html
-    environment:
+      - .${SRC}:/var/www/html

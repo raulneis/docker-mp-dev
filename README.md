@@ -1,5 +1,10 @@
+# After docker install
+```
+usermod -aG docker ${user}
+```
+
+# docker-compose commands
 
 docker-compose up -d
 docker-compose stop
 
-wget -O .docker/xampp-linux-x64-1.8.2-6-installer.run https://sourceforge.net/projects/xampp/files/XAMPP%20Linux/1.8.2/xampp-linux-x64-1.8.2-6-installer.run/download

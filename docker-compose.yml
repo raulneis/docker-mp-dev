@@ -7,14 +7,7 @@ services:
       dockerfile: .docker/Dockerfile
     image: docker-server-mp
     ports:
-      - 12345:80
+      - 8090:80
     volumes:
-      - .:/var/www/html
+      - ./src:/var/www/html
     environment:
-      DB_HOST: mysql
-      DB_DATABASE: laravel_docker
-      DB_USERNAME: app
-      DB_PASSWORD: password
-      REDIS_HOST: redis
-      SESSION_DRIVER: redis
-      CACHE_DRIVER: redis

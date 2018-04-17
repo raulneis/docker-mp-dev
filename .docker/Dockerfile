@@ -1,6 +1,8 @@
 FROM ubuntu:16.04
 MAINTAINER @raulneis <raulneis@gmail.com>
 
+RUN apt-get update && apt-get install -y git nano
+
 ADD .docker/composer.phar /usr/local/bin/composer
 ADD .docker/xampp-linux-x64-1.8.2-6-installer.run /tmp/
 
@@ -14,8 +16,6 @@ RUN /opt/lampp/xampp oci8
 ADD .docker/httpd.conf /opt/lampp/etc/httpd.conf
 ADD .docker/httpd-xampp.conf /opt/lampp/etc/extra/httpd-xampp.conf
 ADD .docker/php.ini /opt/lampp/etc/php.ini
-
-RUN apt install -y nano git
 
 RUN mkdir -p /var/www/html
 

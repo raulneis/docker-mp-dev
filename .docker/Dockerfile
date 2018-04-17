@@ -8,8 +8,8 @@ RUN usermod -u 1000 www-data
 RUN chmod +x /tmp/xampp-linux-x64-1.8.2-6-installer.run
 RUN /tmp/xampp-linux-x64-1.8.2-6-installer.run --mode unattended
 
-RUN /opt/lampp/xampp oci8
 RUN update-alternatives --install /usr/bin/php php /opt/lampp/bin/php 54
+RUN /opt/lampp/xampp oci8
 
 ADD .docker/httpd.conf /opt/lampp/etc/httpd.conf
 ADD .docker/httpd-xampp.conf /opt/lampp/etc/extra/httpd-xampp.conf

@@ -15,6 +15,8 @@ ADD .docker/httpd.conf /opt/lampp/etc/httpd.conf
 ADD .docker/httpd-xampp.conf /opt/lampp/etc/extra/httpd-xampp.conf
 ADD .docker/php.ini /opt/lampp/etc/php.ini
 
+RUN apt install -y nano git
+
 RUN mkdir -p /var/www/html
 
 WORKDIR /var/www/html

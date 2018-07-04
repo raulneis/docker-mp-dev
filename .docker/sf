@@ -1,0 +1,13 @@
+#!/bin/bash
+
+FILE=$(readlink -f ./bin/console)
+if [ -f $FILE ]; then
+   php $FILE $@
+else
+    FILE=$(readlink -f ./app/console)
+    if [ -f $FILE ]; then
+        php $FILE $@
+    else
+       echo "Not a Symfony directory"
+    fi
+fi

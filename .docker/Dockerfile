@@ -17,6 +17,14 @@ ADD .docker/httpd.conf /opt/lampp/etc/httpd.conf
 ADD .docker/httpd-xampp.conf /opt/lampp/etc/extra/httpd-xampp.conf
 ADD .docker/php.ini /opt/lampp/etc/php.ini
 
+ADD .docker/.bashrc /root/.bashrc
+ADD .docker/sf /root/bin/sf
+RUN chmod +x /root/bin/sf
+
+ADD .docker/.bashrc /var/www/.bashrc
+ADD .docker/sf /var/www/bin/sf
+RUN chmod +x /var/www/bin/sf
+
 RUN mkdir -p /var/www/html
 
 WORKDIR /var/www/html

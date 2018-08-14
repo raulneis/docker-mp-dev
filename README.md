@@ -5,6 +5,6 @@ usermod -aG docker ${user}
 
 # docker-compose commands
 
-docker-compose up -d
-docker-compose stop
+docker-compose up --build
+
 
